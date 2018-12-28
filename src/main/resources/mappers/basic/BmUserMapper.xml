@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BmUserMapper">
+
+    <select id="findAllBmUserForPaging" resultType="pd" parameterType="pd">
+        SELECT
+          id,
+          user_name,
+          user_gender,
+          user_mail,
+          DATE_FORMAT(user_birthday, '%Y-%m-%d') as user_birthday,
+          user_phone,
+          DATE_FORMAT(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date,
+          DATE_FORMAT(upd_date, '%Y-%m-%d %H:%i:%s') as upd_date
+        FROM
+          bm_user
+    </select>
+</mapper>
